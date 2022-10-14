@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from .models import TodoListItem
 
 def todoappView(request):
-    return render(request, 'todolist.html')
+    all_todo_items = TodoListItem.object.all()
+    return render(request, 'todolist.html', {})
