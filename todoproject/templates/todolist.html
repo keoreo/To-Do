@@ -8,6 +8,9 @@
 <ul> 
     {% for i in all_items %}  
     <li>{{i.content}} 
+        <form action="/deleteTodoItem/{{i.id}}/" method = "post">{% csrf_token %} 
+            <input type="submit" value="Удалить"> 
+        </form>  
     </li> 
     {% endfor %} 
 </ul>
